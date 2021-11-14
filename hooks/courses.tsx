@@ -94,8 +94,7 @@ export function useCourse(courseId: string) {
 export function useCourses() {
   const apiProvider = useApiProvider("local");
   const [courses, setCourses] = useState<ICourse[]>();
-  const balance = useAccountBalance("");
-  console.log("BALANCE");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function init() {
@@ -124,6 +123,7 @@ export function useCourses() {
           });
         }
         setCourses(courses);
+        setLoading(false);
       }
     }
 
@@ -131,5 +131,6 @@ export function useCourses() {
   }, [apiProvider]);
   return {
     courses,
+    loading,
   };
 }

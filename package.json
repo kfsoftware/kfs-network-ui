@@ -2,12 +2,13 @@
   "name": "polkadot-poc",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "@polkadot/api": ">=6.6.1",
     "@polkadot/extension-dapp": ">=0.40.4",
     "@polkadot/keyring": "7.8.2",
